@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Samartha's Analog Clock</title>
+    <style>
+        .clock-dial {
+            width: 500px;
+            height: 500px;
+            border: 20px solid rgb(77, 115, 149);
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            top: 50px;
+        }
+
+        .point {
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+            border-radius: 50%;
+            position: absolute;
+            top: 220px;
+            left: 220px;
+        }
+
+        .hour {
+            font-size: 30px;
+            font-weight: bold;
+            color: orange;
+            position: absolute;
+        }
+
+        .hour-1 {
+            bottom: 170px;
+            left: 110px;
+        }
+
+        .hour-2 {
+            bottom: 90px;
+            left: 180px;
+        }
+
+        .hour-3 {
+            bottom: 0px;
+            left: 210px;
+        }
+
+        .hour-4 {
+            top: 90px;
+            left: 180px;
+        }
+
+        .hour-5 {
+            top: 170px;
+            left: 110px;
+        }
+
+        .hour-6 {
+            top: 200px;
+            left: 0px;
+        }
+
+        .hour-7 {
+            top: 170px;
+            right: 110px;
+        }
+
+        .hour-8 {
+            top: 90px;
+            right: 180px;
+        }
+
+        .hour-9 {
+            bottom: 0px;
+            right: 210px;
+        }
+
+        .hour-10 {
+            bottom: 90px;
+            right: 180px;
+        }
+
+        .hour-11 {
+            bottom: 170px;
+            right: 110px;
+        }
+
+        .hour-12 {
+            bottom: 200px;
+            left: 0px;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: bolder;
+            color: crimson;
+            position: absolute;
+            bottom: 140px;
+            left: -10px;
+            justify-content: center;
+        }
+
+        .minute-hand-wrapper {
+            width: 380px;
+            height: 380px;
+            position: absolute;
+            border-radius: 50%;
+            top: -180px;
+            right: -180px;
+        }
+
+        .minute-hand {
+            position: relative;
+        }
+
+        .minute-hand .hand {
+            width: 4px;
+            height: 195px;
+            background-color: black;
+            position: absolute;
+            left: 190px;
+        }
+
+        .minute-hand .arrow {
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+            transform: rotate(180deg);
+            position: absolute;
+            left: -8px;
+            top: -16px;
+        }
+
+        .hour-hand-wrapper {
+            width: 280px;
+            height: 280px;
+            position: absolute;
+            border-radius: 50%;
+            top: -130px;
+            right: -130px;
+        }
+
+        .hour-hand {
+            position: relative;
+        }
+
+        .hour-hand .hand {
+            width: 4px;
+            height: 145px;
+            background-color: black;
+            position: absolute;
+            left: 137px;
+        }
+
+        .hour-hand .arrow {
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+            transform: rotate(180deg);
+            position: absolute;
+            left: -8px;
+            top: -14px;
+        }
+
+        .second-hand-wrapper {
+            width: 330px;
+            height: 330px;
+            position: absolute;
+            border-radius: 50%;
+            top: -153px;
+            right: -153px;
+        }
+
+        .second-hand {
+            position: relative;
+        }
+
+        .second-hand .hand {
+            width: 2px;
+            height: 170px;
+            background-color: black;
+            position: absolute;
+            left: 168px;
+        }
+
+        .content {
+            padding: 10px;
+            color: whitesmoke;
+            text-align: center;
+        }
+
+        .select-menu {
+            width: 105px;
+            margin: 90px auto;
+        }
+
+        .select-menu .select-btn {
+            box-sizing: border-box;
+            display: flex;
+            height: 55px;
+            background: rgb(165, 81, 81);
+            padding: 10px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 8px;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gray-800 h-24 flex">
+        <div class="font-serif text-2xl text-blue-200 py-4 px-10 text-justify-center w-1/5 hover:text-red-500">Home
+            <i class="bx bx-chevron-down"></i>
+        </div>
+        <div class="font-serif text-2xl text-blue-200 py-4 px-10 text-justify-center w-1/5 hover:text-red-500">Analog
+            Clock?<i class="bx bx-chevron-down"></i></div>
+        <div class="font-serif text-2xl text-blue-200 py-4 px-10 text-justify-center w-1/5 hover:text-red-500">Countries
+            <i class="bx bx-chevron-down"></i>
+        </div>
+        <div class="font-serif text-2xl text-blue-200 py-4 px-10 text-justify-center w-1/5 hover:text-red-500">
+            Technologies
+            <i class="bx bx-chevron-down"></i>
+        </div>
+        <div class="font-serif text-2xl text-blue-200 py-4 px-10 text-justify-center w-1/5 hover:text-red-500">Company
+            LOGO<i class="bx bx-chevron-down"></i></div>
+    </div>
+    <div class="bg-blue-200 h-screen">
+        <div class="clock-dial">
+            <div class="point">
+                <div class="hour hour-1">1</div>
+                <div class="hour hour-2">2</div>
+                <div class="hour hour-3">3</div>
+                <div class="hour hour-4">4</div>
+                <div class="hour hour-5">5</div>
+                <div class="hour hour-6">6</div>
+                <div class="hour hour-7">7</div>
+                <div class="hour hour-8">8</div>
+                <div class="hour hour-9">9</div>
+                <div class="hour hour-10">10</div>
+                <div class="hour hour-11">11</div>
+                <div class="hour hour-12">12</div>
+                <div class="brand">Sam's Clock</div>
+                <div class="minute-hand-wrapper" id="minute-hand">
+                    <div class="minute-hand">
+                        <div class="hand">
+                            <div class="arrow">V</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hour-hand-wrapper" id="hour-hand">
+                    <div class="hour-hand">
+                        <div class="hand">
+                            <div class="arrow">V</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-hand-wrapper" id="second-hand">
+                    <div class="second-hand">
+                        <div class="hand">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-3 justify-items-center bg-red-200">
+        <div class="py-10">
+            <div class="rounded overflow-hidden shadow-lg max-w-sm">
+                <img src="./Time2.jpg" alt="Quote" class="w-full">
+            </div>
+        </div>
+        <div class="py-10">
+            <div class="rounded overflow-hidden shadow-lg max-w-sm">
+                <img src="./Time3.webp" alt="Quote" class="w-full">
+            </div>
+        </div>
+        <div class="py-10">
+            <div class="rounded overflow-hidden shadow-lg max-w-sm">
+                <img src="./Time3.jpg" alt="Quote" class="w-full">
+            </div>
+        </div>
+    </div>
+    <div class="bg-white-800 h-24 flex">
+        <div class="font-serif text-xl text-teal-500 py-4 px-10 text-justify-center w-1/5 hover:text-green-900">Contact
+            Me
+            <i class="bx bxl-github bx-flashing-hover"></i>
+            <i class="bx bxl-facebook bx-flashing-hover"></i>
+            <i class="bx bxl-instagram bx-flashing-hover"></i>
+        </div>
+        <div class="font-serif text-2xl text-teal-500 py-4 px-10 text-justify-center w-1/5 hover:text-green-900">Help
+            Centre
+            <i class='bx bxs-like bx-flashing-hover'></i>
+        </div>
+        <div class="font-serif text-2xl text-teal-500 py-4 px-10 text-justify-center w-1/5 hover:text-green-900">Report
+            an Issue!<i class='bx bxs-heart bx-flashing-hover'></i></div>
+        <div class="font-serif text-xl text-teal-500 py-4 px-10 text-justify-center w-1/5 hover:text-green-900">Other
+            Appliances<i class='bx bx-right-arrow bx-flashing-hover '></i></div>
+        <div class="font-serif text-2xl text-teal-500 py-4 px-10 text-justify-center w-1/5 hover:text-green-900">
+            Personal Details<i class="bx bxl-whatsapp bx-flashing-hover"></i></div>
+    </div>
+    <div class="content text-xl bg-black bolder">
+        <li>A SELF MADE WEBSITE WITHOUT THE HELP OF ANY TUTORIAL.Please!!!Forgive the faults.It is not a responsive
+            website.Stay tuned...</li>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
