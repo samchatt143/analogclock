@@ -1,2 +1,3 @@
 # analogclock
 A simple analog clock made by using tailwind css vanilla js and html...
+It which would show the current time of the current place of the user..Kindly notice it is not a responsive website...please do cooperate and for a responsive one look at @samarthalandingpage....please have a look here-------https://samarthaclockpage.netlify.app/
